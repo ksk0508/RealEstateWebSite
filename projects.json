@@ -3,28 +3,66 @@
     "title": "Aparna One",
     "location": "Shaikpet",
     "bhk": "3 & 4 BHK",
-    "price": "₹5 Cr – ₹8 Cr",
+    "price": "Rs 5 Cr - Rs 8 Cr",
     "status": "Ready to Move",
     "image": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
-    "description": "Hyderabad's tallest residential towers — 6 towers, G+35 floors, 464 units on 9.7 acres.",
+    "description": "Hyderabad's tallest residential towers - 6 towers, G+35 floors, 464 units on 9.7 acres. IGBC Platinum Pre-Certified. Walking distance from Banjara Hills and Jubilee Hills.",
     "bullets": [
       "Views of Golconda Fort, Golf Club & Qutb Shahi Tombs",
       "40+ amenities including a full clubhouse block",
-      "By Aparna Constructions — 26+ years, 41 delivered projects"
+      "By Aparna Constructions - 26+ years, 41 delivered projects"
     ]
   },
   {
     "title": "My Home APAS",
     "location": "Kokapet",
     "bhk": "2 & 3 BHK",
-    "price": "₹3 Cr – ₹4 Cr",
+    "price": "Rs 3 Cr - Rs 4 Cr",
     "status": "Under Construction",
     "image": "https://imgcdn.houssed.com/assets/Files/Projects/8230/Project%20Image/89190d7c0c82ffa87e094d5914278450.webp",
-    "description": "6 towers, G+44 floors, 1,338 units on 13.5 acres.",
+    "description": "6 towers, G+44 floors, 1,338 units on 13.5 acres. Overlooks Kokapet Lake and Osman Sagar.",
     "bullets": [
       "Panoramic lake & city skyline views from upper floors",
       "5 min from Financial District, 10 min from Gachibowli",
-      "By My Home Group — 35+ years, 22 delivered projects"
+      "By My Home Group - 35+ years, 22 delivered projects"
     ]
+  },
+  {
+    "title": "Fortune Sonthalia Sky Villas",
+    "location": "Kokapet",
+    "bhk": "4 BHK Sky Villas",
+    "price": "Rs 7 Cr - Rs 12 Cr",
+    "status": "New Launch",
+    "image": "https://imgcdn.houssed.com/assets/Files/Projects/1827/Project%20Image/b97b4ab1f06ab6f64b064c826041af85.webp",
+    "description": "Ultra-luxury sky villas - 6,333-7,333 sq ft per unit, 232 exclusive residences.",
+    "bullets": [
+      "Maximum privacy - 2 units per floor",
+      "Cricket pitch, squash, spa, and salon inside the community",
+      "Off ORR, Kokapet - 10 min from IT hubs"
+    ]
+  },
+  {
+    "title": "Sri Aditya Hidden Coves",
+    "location": "Manchirevula, Narsingi",
+    "bhk": "5 BHK Villas",
+    "price": "Rs 15 Cr - Rs 30 Cr",
+    "status": "New Launch",
+    "image": "https://imgcdn.houssed.com/assets/Files/Projects/127762/Project%20Image/1-1744099079.webp",
+    "description": "Ultra-luxury independent villa community in Narsingi. Spacious 5 BHK villas with premium finishes.",
+    "bullets": [
+      "Low-density gated community - RERA registered",
+      "Near Sloka Global School, Manchirevula Road",
+      "By Sri Aditya Homes - founded 1991, 30+ delivered projects"
+    ]
+  },
+  {
+    "title": "New Project",
+    "location": "test",
+    "bhk": "3",
+    "price": "3",
+    "status": "New Launch",
+    "image": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
+    "description": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
+    "bullets": []
   }
 ]
