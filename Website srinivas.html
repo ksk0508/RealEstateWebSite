@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clarity Estates — Luxury Homes in West Hyderabad</title>
-  <meta name="description" content="Clarity Estates Private Limited — Luxury realty advisory for flats and villas (₹3–30 Cr) in West Hyderabad, and plotted layout developments in emerging growth corridors around Hyderabad." />
+  <title>Clarity Estates - Luxury Homes in West Hyderabad</title>
+  <meta name="description" content="Clarity Estates Private Limited - Luxury realty advisory for flats and villas (Rs 3-30 Cr) in West Hyderabad, and plotted layout developments in emerging growth corridors around Hyderabad." />
   <meta name="theme-color" content="#1d1b18" />
   <meta property="og:title" content="Clarity Estates Private Limited" />
-  <meta property="og:description" content="Luxury Realty Advisory, West Hyderabad. Flats & Villas ₹3–30 Cr." />
+  <meta property="og:description" content="Luxury Realty Advisory, West Hyderabad. Flats & Villas Rs 3-30 Cr." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_IN" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=zodiak@400,500,700&display=swap" rel="stylesheet">
@@ -153,12 +153,12 @@
     .f-links{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s4)}
 
     /* contact */
-    .cta-panel{padding:clamp(1.75rem,4vw,2.75rem);border-radius:calc(var(--r2) + .5rem);background:linear-gradient(135deg,color-mix(in srgb,var(--charcoal) 96%,transparent),color-mix(in srgb,var(--gold) 24%,var(--charcoal)));color:#f8f3eb;display:grid;gap:var(--s6);box-shadow:var(--sh-lg)}
-    .cta-panel h2{font-size:var(--2xl);max-width:16ch;color:#f8f3eb}
-    .cta-panel p{color:rgba(248,243,235,.76);max-width:52ch}
+    .cta-panel{padding:clamp(1.75rem,4vw,2.75rem);border-radius:calc(var(--r2) + .5rem);background:linear-gradient(135deg,#1d1b18,#3a2c1c);color:#f8f3eb;display:grid;gap:var(--s6);box-shadow:var(--sh-lg)}
+    .cta-panel h2{font-size:var(--2xl);max-width:16ch;color:#fffaf2}
+    .cta-panel p{color:rgba(255,250,242,.86);max-width:52ch}
     .cta-btns{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s2)}
     .cta-panel .btn-outline{background:rgba(255,255,255,.07);color:#f8f3eb;border-color:rgba(255,255,255,.14)}
-    .cin{font-size:var(--xs);color:rgba(248,243,235,.48);letter-spacing:.08em;margin-bottom:var(--s5)}
+    .cin{font-size:var(--xs);color:rgba(255,250,242,.72);letter-spacing:.08em;margin-bottom:var(--s5)}
 
     /* footer */
     .footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--border)}
@@ -193,8 +193,39 @@
     /* WhatsApp FAB */
     .whatsapp-fab{position:fixed;right:1rem;bottom:1.25rem;width:56px;height:56px;border-radius:9999px;background:#25D366;color:#fff;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.18);z-index:150}
     .whatsapp-fab svg{width:22px;height:22px}
-    /* admin panel small adjustments */
-    #admin-panel [class*=card]{max-width:1200px;margin:0 auto}
+    /* admin project manager */
+    body.admin-open{overflow:hidden}
+    .admin-overlay{position:fixed;inset:0;display:none;z-index:220;background:rgba(18,16,13,.58);backdrop-filter:blur(10px);padding:clamp(.75rem,2vw,1.5rem)}
+    .admin-overlay.open{display:flex}
+    .admin-modal{width:min(1180px,100%);max-height:min(860px,calc(100vh - 2rem));margin:auto;overflow:hidden;border-radius:var(--r2);background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-lg);display:grid;grid-template-rows:auto 1fr auto}
+    .admin-head,.admin-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s4) var(--s5);border-bottom:1px solid var(--border)}
+    .admin-foot{border-top:1px solid var(--border);border-bottom:0;flex-wrap:wrap}
+    .admin-title strong{display:block;font-size:var(--sm);color:var(--text)}
+    .admin-title span,.admin-status{display:block;font-size:var(--xs);color:var(--muted)}
+    .admin-body{display:grid;grid-template-columns:330px minmax(0,1fr);min-height:0}
+    .admin-list{border-right:1px solid var(--border);overflow:auto;padding:var(--s4);background:color-mix(in srgb,var(--surface2) 62%,transparent)}
+    .admin-list-head{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s3)}
+    .admin-items{display:grid;gap:var(--s2)}
+    .admin-item{width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);padding:var(--s3);display:grid;gap:.15rem}
+    .admin-item.active{border-color:color-mix(in srgb,var(--gold) 58%,transparent);box-shadow:0 0 0 3px var(--gold-hl)}
+    .admin-item strong{font-size:var(--sm);color:var(--text)}
+    .admin-item span{font-size:var(--xs);color:var(--muted)}
+    .admin-form{overflow:auto;padding:var(--s5);display:grid;gap:var(--s4)}
+    .admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4)}
+    .field{display:grid;gap:.35rem}
+    .field label{font-size:var(--xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .field input,.field textarea{width:100%;border:1px solid var(--border);border-radius:.75rem;background:var(--surface);color:var(--text);padding:.85rem .9rem;font:inherit;font-size:var(--sm)}
+    .field textarea{min-height:110px;resize:vertical}
+    .field.full{grid-column:1/-1}
+    .admin-actions{display:flex;flex-wrap:wrap;gap:var(--s3)}
+    .btn-danger{background:#b9403a;color:#fff}
+    .btn-danger:hover{background:#9f342f}
+    @media(max-width:760px){
+      .admin-body{grid-template-columns:1fr}
+      .admin-list{border-right:0;border-bottom:1px solid var(--border);max-height:220px}
+      .admin-grid{grid-template-columns:1fr}
+      .admin-head,.admin-foot{align-items:flex-start;flex-direction:column}
+    }
   </style>
 </head>
 <body>
@@ -209,7 +240,7 @@
         </svg>
         <div class="brand-name">
           <strong>Clarity Estates</strong>
-          <span>Luxury Advisory · West Hyderabad</span>
+          <span>Luxury Advisory - West Hyderabad</span>
         </div>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -244,9 +275,9 @@
     <section class="hero" id="home">
       <div class="wrap hero-grid">
         <div class="hero-text fade">
-          <span class="pill">Luxury Realty Advisory · West Hyderabad</span>
+          <span class="pill">Luxury Realty Advisory - West Hyderabad</span>
           <h1 class="h">Luxury Flats &amp; Villas in West Hyderabad</h1>
-          <p>We help premium buyers, NRIs, and HNIs find the right luxury flat or villa — ₹3 Cr to ₹30 Cr — across West Hyderabad's finest projects.</p>
+          <p>We help premium buyers, NRIs, and HNIs find the right luxury flat or villa - Rs 3 Cr to Rs 30 Cr - across West Hyderabad's finest projects.</p>
           <div class="hero-ctas">
             <a class="btn btn-gold" href="#projects">View Projects</a>
             <a class="btn btn-outline" href="#contact">Talk to Us</a>
@@ -255,11 +286,11 @@
         <div class="hero-img up" aria-hidden="true">
           <div class="hero-badges">
             <div class="badge">
-              <strong>₹3 Cr – ₹30 Cr</strong>
+              <strong>Rs 3 Cr - Rs 30 Cr</strong>
               <span>Luxury flats &amp; villas, West Hyderabad</span>
             </div>
             <div class="badge">
-              <strong>Flats · Villas · Gated Communities</strong>
+              <strong>Flats - Villas - Gated Communities</strong>
               <span>Advisory-first, no pressure</span>
             </div>
           </div>
@@ -277,7 +308,7 @@
           </div>
           <div class="val up">
             <strong>Trust</strong>
-            <p>Earned through consistency — in every conversation, every decision.</p>
+            <p>Earned through consistency - in every conversation, every decision.</p>
           </div>
           <div class="val up">
             <strong>Commitment</strong>
@@ -297,31 +328,79 @@
         <div class="sh fade">
           <span class="pill">Featured Projects</span>
           <h2>Curated luxury projects in West Hyderabad</h2>
-          <p>Handpicked for builder credibility, location strength, and long-term value — across the ₹3–30 Cr segment.</p>
+          <p>Handpicked for builder credibility, location strength, and long-term value - across the Rs 3-30 Cr segment.</p>
         </div>
         <div class="proj-grid" id="proj-grid">
-          <!-- Projects will be rendered here from localStorage / defaultProjects -->
+          <!-- Projects are rendered here from projects.json -->
         </div>
 
-        <!-- Admin modal for editing projects JSON (client-side only) -->
-        <div id="admin-panel" style="display:none">
-          <div class="wrap card" style="position:fixed;inset:10vh 2rem 10vh 2rem;overflow:auto;z-index:200;background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-lg)">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-              <strong>Project Manager (client-side)</strong>
-              <div style="display:flex;gap:.5rem;align-items:center">
-                <button id="export-json" class="btn btn-outline" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">Export JSON</button>
-                <button id="reset-defaults" class="btn btn-outline" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">Reset Defaults</button>
-                <button id="close-admin" class="btn btn-outline" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">Close</button>
+        <!-- Admin project manager. Open with ?admin=true. Saves through Cloudflare Worker. -->
+        <div id="admin-panel" class="admin-overlay" aria-hidden="true">
+          <div class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+            <div class="admin-head">
+              <div class="admin-title">
+                <strong id="admin-title">Project Manager</strong>
+                <span>Edit projects, then publish to projects.json through the Cloudflare Worker.</span>
               </div>
+              <button id="close-admin" class="btn btn-outline" type="button">Close</button>
             </div>
-            <p style="color:var(--muted);margin-bottom:1rem">Edit projects as JSON below. Click "Save" to persist to localStorage. Use export to download a copy.</p>
-            <textarea id="projects-json" style="width:100%;min-height:60vh;padding:1rem;border-radius:.5rem;border:1px solid var(--border);font-family:monospace"></textarea>
-            <div style="display:flex;gap:1rem;margin-top:1rem">
-              <button id="save-json" class="btn btn-gold">Save</button>
-              <input id="import-file" type="file" accept="application/json" style="display:none">
-              <button id="import-json" class="btn btn-outline">Import JSON</button>
+            <div class="admin-body">
+              <aside class="admin-list" aria-label="Project list">
+                <div class="admin-list-head">
+                  <strong>Projects</strong>
+                  <button id="add-project" class="btn btn-gold" type="button" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">Add</button>
+                </div>
+                <div id="admin-project-list" class="admin-items"></div>
+              </aside>
+              <form id="project-form" class="admin-form">
+                <div class="admin-grid">
+                  <div class="field">
+                    <label for="project-title">Project name</label>
+                    <input id="project-title" name="title" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-location">Location</label>
+                    <input id="project-location" name="location" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-bhk">Configuration</label>
+                    <input id="project-bhk" name="bhk" placeholder="3 & 4 BHK" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-price">Price</label>
+                    <input id="project-price" name="price" placeholder="Rs 5 Cr - Rs 8 Cr" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-status">Status</label>
+                    <input id="project-status" name="status" placeholder="Ready to Move" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-image">Image URL</label>
+                    <input id="project-image" name="image" type="url" required>
+                  </div>
+                  <div class="field full">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" name="description" required></textarea>
+                  </div>
+                  <div class="field full">
+                    <label for="project-bullets">Highlights, one per line</label>
+                    <textarea id="project-bullets" name="bullets"></textarea>
+                  </div>
+                </div>
+                <div class="admin-actions">
+                  <button id="apply-project" class="btn btn-gold" type="submit">Apply Changes</button>
+                  <button id="delete-project" class="btn btn-danger" type="button">Delete</button>
+                  <button id="duplicate-project" class="btn btn-outline" type="button">Duplicate</button>
+                  <button id="export-json" class="btn btn-outline" type="button">Export JSON</button>
+                  <input id="import-file" type="file" accept="application/json" style="display:none">
+                  <button id="import-json" class="btn btn-outline" type="button">Import JSON</button>
+                </div>
+              </form>
             </div>
-            <p style="font-size:var(--xs);color:var(--muted);margin-top:1rem">Admin access via URL param <code>?admin=true</code>. For added protection, a prompt asks for the admin key. Change the ADMIN_KEY in the script before publishing.</p>
+            <div class="admin-foot">
+              <span id="admin-status" class="admin-status">Changes are local until you publish.</span>
+              <button id="publish-projects" class="btn btn-gold" type="button">Publish Projects</button>
+            </div>
           </div>
         </div>
       </div>
@@ -332,11 +411,11 @@
       <div class="wrap">
         <div class="sh fade">
           <span class="pill">Coming Soon</span>
-          <h2>Plotted developments — in the works</h2>
+          <h2>Plotted developments - in the works</h2>
         </div>
         <div class="plotted-panel up">
           <h3>Premium Plotted Layouts</h3>
-          <p>Clarity Estates is developing its own HMDA-approved gated plotted layouts in emerging, sustainable growth corridors around Hyderabad — built for long-term value.</p>
+          <p>Clarity Estates is developing its own HMDA-approved gated plotted layouts in emerging, sustainable growth corridors around Hyderabad - built for long-term value.</p>
           <ul class="dots">
             <li>HMDA-approved gated plotted layouts</li>
             <li>Emerging &amp; sustainable corridors around Hyderabad</li>
@@ -357,7 +436,7 @@
         <div class="serve-grid">
           <div class="serve-card up">
             <h3>Premium Home Buyers</h3>
-            <p>Upgrading to a luxury flat or villa in the ₹3–30 Cr range. We give you filtered shortlists, honest comparisons, and site visit support — no pressure.</p>
+            <p>Upgrading to a luxury flat or villa in the Rs 3-30 Cr range. We give you filtered shortlists, honest comparisons, and site visit support - no pressure.</p>
           </div>
           <div class="serve-card up">
             <h3>NRI Investors</h3>
@@ -365,7 +444,7 @@
           </div>
           <div class="serve-card up">
             <h3>HNI Buyers</h3>
-            <p>Seeking curated, high-value residential opportunities in West Hyderabad's premium corridors — with full discretion and an investment-first perspective.</p>
+            <p>Seeking curated, high-value residential opportunities in West Hyderabad's premium corridors - with full discretion and an investment-first perspective.</p>
           </div>
         </div>
       </div>
@@ -387,8 +466,8 @@
               </div>
             </div>
             <div class="f-bio">
-              <p class="f-role">Technology · Investment · Strategy</p>
-              <p>A technology professional turned real estate strategist — Srinivasa brings analytical rigour and research discipline to every advisory conversation. His focus is on verified opportunities, long-term wealth creation, and transparent guidance for buyers who want clarity, not sales pressure.</p>
+              <p class="f-role">Technology - Investment - Strategy</p>
+              <p>A technology professional turned real estate strategist - Srinivasa brings analytical rigour and research discipline to every advisory conversation. His focus is on verified opportunities, long-term wealth creation, and transparent guidance for buyers who want clarity, not sales pressure.</p>
               <div class="f-links">
                 <a href="https://www.youtube.com/@HyderabadwealthArchitect" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
@@ -409,7 +488,7 @@
               </div>
             </div>
             <div class="f-bio">
-              <p class="f-role">Land Development · Sales · Execution</p>
+              <p class="f-role">Land Development - Sales - Execution</p>
               <p>Chakravarthi began his career as a contractor in open plotting ventures and grew into a successful partner in plotted layout development and luxury flat sales. His ground-level execution experience and drive to deliver results make him the operational backbone of Clarity Estates.</p>
             </div>
           </div>
@@ -424,10 +503,10 @@
           <div>
             <span class="pill" style="border-color:rgba(255,255,255,.12);color:rgba(248,243,235,.7)">Get in Touch</span>
             <h2 style="margin:var(--s4) 0 var(--s3)">Looking for a luxury home in West Hyderabad?</h2>
-            <p>Whether you're a buyer shortlisting properties, an NRI evaluating options remotely, or an HNI exploring premium investments — reach out for a direct, no-pressure conversation.</p>
+            <p>Whether you're a buyer shortlisting properties, an NRI evaluating options remotely, or an HNI exploring premium investments - reach out for a direct, no-pressure conversation.</p>
           </div>
           <div>
-            <p class="cin">Clarity Estates Private Limited · CIN: U68100TS2026PTC216829</p>
+            <p class="cin">Clarity Estates Private Limited - CIN: U68100TS2026PTC216829</p>
             <div class="cta-btns">
               <a class="btn btn-gold" href="tel:+919948091645">Call Now</a>
               <a class="btn btn-outline" href="https://wa.me/919948091645" target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -442,7 +521,7 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <div><strong style="color:var(--text)">Clarity Estates Private Limited</strong> — Luxury Realty Advisory, West Hyderabad · Plotted Developments coming soon.</div>
+      <div><strong style="color:var(--text)">Clarity Estates Private Limited</strong> - Luxury Realty Advisory, West Hyderabad - Plotted Developments coming soon.</div>
       <div>CIN: U68100TS2026PTC216829</div>
       <nav class="footer-links" aria-label="Footer">
         <a href="#projects">Projects</a>
@@ -478,132 +557,253 @@
       waFab.innerHTML='<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.7 4.3a11 11 0 10-15.6 15.6L3 21l1.1-3.9A11 11 0 0021.7 4.3z" fill="currentColor"/><path d="M17.2 14.4c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2s-.8 1.2-1 1.4c-.2.2-.4.3-.8.1-.4-.2-1.5-.6-2.9-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.8.2-.3.2-.5.3-.8.1-.3 0-.6 0-.8-.1-.2-.7-1.6-1-2.2-.3-.6-.6-.5-.8-.5-.2 0-.4 0-.6 0s-.6.1-.9.4c-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.3 3.2 1.5 3.2 1 3.8 1 .6 0 2.1-.8 2.4-1.6.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.7-.5z" fill="#fff"/></svg>';
       document.body.appendChild(waFab);
 
-      // PROJECTS: client-side editable JSON stored in localStorage
+      // PROJECTS: projects.json is the public source of truth.
       const DEFAULT_PROJECTS = [
         {
-          "title":"Aparna One",
-          "location":"Shaikpet",
-          "bhk":"3 & 4 BHK",
-          "price":"₹5 Cr – ₹8 Cr",
-          "status":"Ready to Move",
-          "image":"https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
-          "description":"Hyderabad's tallest residential towers — 6 towers, G+35 floors, 464 units on 9.7 acres. IGBC Platinum Pre-Certified. Walking distance from Banjara Hills and Jubilee Hills.",
-          "bullets":["Views of Golconda Fort, Golf Club & Qutb Shahi Tombs","40+ amenities including a full clubhouse block","By Aparna Constructions — 26+ years, 41 delivered projects"]
+          title:'Aparna One',
+          location:'Shaikpet',
+          bhk:'3 & 4 BHK',
+          price:'Rs 5 Cr - Rs 8 Cr',
+          status:'Ready to Move',
+          image:'https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg',
+          description:'Hyderabad\'s tallest residential towers - 6 towers, G+35 floors, 464 units on 9.7 acres.',
+          bullets:['Views of Golconda Fort, Golf Club & Qutb Shahi Tombs','40+ amenities including a full clubhouse block','By Aparna Constructions - 26+ years, 41 delivered projects']
         },
         {
-          "title":"My Home APAS",
-          "location":"Kokapet",
-          "bhk":"2 & 3 BHK",
-          "price":"₹3 Cr – ₹4 Cr",
-          "status":"Under Construction",
-          "image":"https://imgcdn.houssed.com/assets/Files/Projects/8230/Project%20Image/89190d7c0c82ffa87e094d5914278450.webp",
-          "description":"6 towers, G+44 floors, 1,338 units on 13.5 acres. Overlooks Kokapet Lake and Osman Sagar.",
-          "bullets":["Panoramic lake & city skyline views from upper floors","5 min from Financial District, 10 min from Gachibowli","By My Home Group — 35+ years, 22 delivered projects"]
-        },
-        {
-          "title":"Fortune Sonthalia Sky Villas",
-          "location":"Kokapet",
-          "bhk":"4 BHK Sky Villas",
-          "price":"₹7 Cr – ₹12 Cr",
-          "status":"New Launch",
-          "image":"https://imgcdn.houssed.com/assets/Files/Projects/1827/Project%20Image/b97b4ab1f06ab6f64b064c826041af85.webp",
-          "description":"Ultra-luxury sky villas — 6,333–7,333 sq ft per unit, 232 exclusive residences.",
-          "bullets":["Maximum privacy — 2 units per floor","Cricket pitch, squash, spa, and salon inside the community","Off ORR, Kokapet — 10 min from IT hubs"]
-        },
-        {
-          "title":"Sri Aditya Hidden Coves",
-          "location":"Manchirevula, Narsingi",
-          "bhk":"5 BHK Villas",
-          "price":"₹15 Cr – ₹30 Cr",
-          "status":"New Launch",
-          "image":"https://imgcdn.houssed.com/assets/Files/Projects/127762/Project%20Image/1-1744099079.webp",
-          "description":"Ultra-luxury independent villa community in Narsingi. Spacious 5 BHK villas with premium finishes.",
-          "bullets":["Low-density gated community — RERA registered","Near Sloka Global School, Manchirevula Road","By Sri Aditya Homes — founded 1991, 30+ delivered projects"]
+          title:'My Home APAS',
+          location:'Kokapet',
+          bhk:'2 & 3 BHK',
+          price:'Rs 3 Cr - Rs 4 Cr',
+          status:'Under Construction',
+          image:'https://imgcdn.houssed.com/assets/Files/Projects/8230/Project%20Image/89190d7c0c82ffa87e094d5914278450.webp',
+          description:'6 towers, G+44 floors, 1,338 units on 13.5 acres.',
+          bullets:['Panoramic lake & city skyline views from upper floors','5 min from Financial District, 10 min from Gachibowli','By My Home Group - 35+ years, 22 delivered projects']
         }
       ];
+      const PROJECTS_URL = 'projects.json';
+      const WORKER_ENDPOINT = window.__WORKER_ENDPOINT || 'https://long-wave-e9fc.k-santoshkumar0508.workers.dev/';
+      let projects = [];
+      let selectedProject = 0;
+      let adminKey = sessionStorage.getItem('clarity_admin_key') || '';
+      let publishTimer = null;
 
-      function loadProjects(){
-        try{
-          const raw=localStorage.getItem('clarity_projects');
-          if(!raw){ localStorage.setItem('clarity_projects',JSON.stringify(DEFAULT_PROJECTS)); return JSON.parse(JSON.stringify(DEFAULT_PROJECTS)); }
-          return JSON.parse(raw);
-        }catch(e){ console.error('Failed to parse projects',e); localStorage.setItem('clarity_projects',JSON.stringify(DEFAULT_PROJECTS)); return DEFAULT_PROJECTS; }
+      function escapeHTML(value){
+        return String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
       }
-
-      function saveProjects(arr){ localStorage.setItem('clarity_projects',JSON.stringify(arr)); renderProjects(); }
-
+      function normalizeProject(project){
+        return {
+          title:String(project?.title || '').trim(),
+          location:String(project?.location || '').trim(),
+          bhk:String(project?.bhk || '').trim(),
+          price:String(project?.price || '').trim(),
+          status:String(project?.status || '').trim(),
+          image:String(project?.image || '').trim(),
+          description:String(project?.description || '').trim(),
+          bullets:Array.isArray(project?.bullets) ? project.bullets.map(b=>String(b).trim()).filter(Boolean) : []
+        };
+      }
+      function validateProjects(value){
+        if(!Array.isArray(value)) throw new Error('projects.json must contain an array of projects.');
+        const cleaned=value.map(normalizeProject);
+        cleaned.forEach((p,i)=>{
+          ['title','location','bhk','price','status','image','description'].forEach(field=>{
+            if(!p[field]) throw new Error(`Project ${i+1} is missing ${field}.`);
+          });
+        });
+        return cleaned;
+      }
+      async function loadProjects(){
+        try{
+          const response=await fetch(`${PROJECTS_URL}?v=${Date.now()}`,{cache:'no-store'});
+          if(!response.ok) throw new Error(`HTTP ${response.status}`);
+          projects=validateProjects(await response.json());
+        }catch(error){
+          console.warn('Using bundled fallback projects because projects.json could not be loaded.',error);
+          projects=validateProjects(DEFAULT_PROJECTS);
+        }
+        selectedProject=0;
+        renderProjects();
+        renderAdminList();
+        fillProjectForm();
+      }
       function renderProjects(){
         const grid=document.getElementById('proj-grid'); if(!grid) return; grid.innerHTML='';
-        const projects=loadProjects();
         projects.forEach(p=>{
           const art=document.createElement('article'); art.className='proj-card up';
-          art.innerHTML=`<div class="proj-photo"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
+          art.innerHTML=`<div class="proj-photo"><img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.title)}" loading="lazy"></div>
             <div class="proj-body">
-              <h3>${p.title}</h3>
+              <h3>${escapeHTML(p.title)}</h3>
               <div class="tags">
-                <span class="tag">${p.location}</span>
-                <span class="tag">${p.bhk}</span>
-                <span class="tag">${p.price}</span>
-                <span class="tag">${p.status}</span>
+                <span class="tag">${escapeHTML(p.location)}</span>
+                <span class="tag">${escapeHTML(p.bhk)}</span>
+                <span class="tag">${escapeHTML(p.price)}</span>
+                <span class="tag">${escapeHTML(p.status)}</span>
               </div>
-              <p>${p.description}</p>
-              <ul class="dots">${(p.bullets||[]).map(b=>`<li>${b}</li>`).join('')}</ul>
+              <p>${escapeHTML(p.description)}</p>
+              <ul class="dots">${(p.bullets||[]).map(b=>`<li>${escapeHTML(b)}</li>`).join('')}</ul>
               <a class="btn btn-gold" href="#contact">Request Details</a>
             </div>`;
           grid.appendChild(art);
         });
       }
-
-      // ADMIN: open JSON editor when ?admin=true
-      const urlParams=new URLSearchParams(location.search);
-      const ADMIN_KEY='clarity-9f4b2d7c1a6e3b8f'; // rotated; change again before publishing
-      if(urlParams.get('admin')==='true'){
-        // simple prompt for key
-        const k=prompt('Enter admin key to manage projects (client-side)');
-        if(k===ADMIN_KEY){
-          document.getElementById('admin-panel').style.display='block';
-          const ta=document.getElementById('projects-json');
-          const saveBtn=document.getElementById('save-json');
-          const exportBtn=document.getElementById('export-json');
-          const resetBtn=document.getElementById('reset-defaults');
-          const importBtn=document.getElementById('import-json');
-          const importFile=document.getElementById('import-file');
-          const closeBtn=document.getElementById('close-admin');
-          function refreshTA(){ ta.value=JSON.stringify(loadProjects(),null,2); }
-          refreshTA();
-          const WORKER_ENDPOINT = ''; // set to your Cloudflare Worker URL, e.g. 'https://example.workers.dev'
-          saveBtn.addEventListener('click',()=>{
-            try{
-              const parsed=JSON.parse(ta.value);
-              // attempt remote save if worker endpoint is configured
-              if(WORKER_ENDPOINT && WORKER_ENDPOINT.length){
-                fetch(WORKER_ENDPOINT,{
-                  method:'POST',
-                  headers:{'Content-Type':'application/json'},
-                  body:JSON.stringify({adminKey:k,projects:parsed})
-                }).then(async res=>{
-                  if(res.ok){ saveProjects(parsed); alert('Saved to remote and localStorage'); }
-                  else{ const txt=await res.text(); saveProjects(parsed); alert('Remote save failed: '+txt+' — saved locally'); }
-                }).catch(err=>{ saveProjects(parsed); alert('Remote save failed: '+err.message+' — saved locally'); });
-              }else{
-                saveProjects(parsed); alert('Saved to localStorage');
-              }
-            }catch(e){ alert('Invalid JSON: '+e.message); }
+      function emptyProject(){
+        return {title:'New Project',location:'',bhk:'',price:'',status:'New Launch',image:'',description:'',bullets:[]};
+      }
+      function setAdminStatus(message){
+        const status=document.getElementById('admin-status');
+        if(status) status.textContent=message;
+      }
+      function renderAdminList(){
+        const list=document.getElementById('admin-project-list'); if(!list) return; list.innerHTML='';
+        projects.forEach((project,index)=>{
+          const button=document.createElement('button');
+          button.type='button';
+          button.className=`admin-item${index===selectedProject?' active':''}`;
+          button.innerHTML=`<strong>${escapeHTML(project.title || 'Untitled project')}</strong><span>${escapeHTML(project.location || 'No location')} - ${escapeHTML(project.status || 'No status')}</span>`;
+          button.addEventListener('click',()=>{ selectedProject=index; renderAdminList(); fillProjectForm(); });
+          list.appendChild(button);
+        });
+      }
+      function fillProjectForm(){
+        const form=document.getElementById('project-form'); if(!form || !projects.length) return;
+        const p=projects[selectedProject] || emptyProject();
+        form.elements.title.value=p.title || '';
+        form.elements.location.value=p.location || '';
+        form.elements.bhk.value=p.bhk || '';
+        form.elements.price.value=p.price || '';
+        form.elements.status.value=p.status || '';
+        form.elements.image.value=p.image || '';
+        form.elements.description.value=p.description || '';
+        form.elements.bullets.value=(p.bullets || []).join('\n');
+        document.getElementById('delete-project').disabled=projects.length<=1;
+      }
+      function projectFromForm(){
+        const form=document.getElementById('project-form');
+        return normalizeProject({
+          title:form.elements.title.value,
+          location:form.elements.location.value,
+          bhk:form.elements.bhk.value,
+          price:form.elements.price.value,
+          status:form.elements.status.value,
+          image:form.elements.image.value,
+          description:form.elements.description.value,
+          bullets:form.elements.bullets.value.split(/\r?\n/)
+        });
+      }
+      function applyCurrentProject(){
+        projects[selectedProject]=projectFromForm();
+        projects=validateProjects(projects);
+        renderProjects();
+        renderAdminList();
+        setAdminStatus('Changes applied locally. Publish when ready.');
+      }
+      function openAdmin(){
+        const panel=document.getElementById('admin-panel');
+        if(!adminKey){
+          const key=prompt('Enter admin publish key');
+          if(!key) return;
+          adminKey=key;
+          sessionStorage.setItem('clarity_admin_key',key);
+        }
+        panel.classList.add('open');
+        panel.setAttribute('aria-hidden','false');
+        document.body.classList.add('admin-open');
+        renderAdminList();
+        fillProjectForm();
+      }
+      function closeAdmin(){
+        const panel=document.getElementById('admin-panel');
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden','true');
+        document.body.classList.remove('admin-open');
+      }
+      async function publishProjects(){
+        try{ applyCurrentProject(); }catch(error){ alert(error.message); return; }
+        const publishButton=document.getElementById('publish-projects');
+        publishButton.disabled=true;
+        setAdminStatus('Publishing projects.json to GitHub...');
+        try{
+          const response=await fetch(WORKER_ENDPOINT,{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({adminKey,projects})
           });
-          exportBtn.addEventListener('click',()=>{
-            const blob=new Blob([ta.value],{type:'application/json'}); const url=URL.createObjectURL(blob);
-            const a=document.createElement('a'); a.href=url; a.download='projects.json'; a.click(); URL.revokeObjectURL(url);
-          });
-          resetBtn.addEventListener('click',()=>{ if(confirm('Reset to bundled defaults?')){ saveProjects(DEFAULT_PROJECTS); refreshTA(); } });
-          importBtn.addEventListener('click',()=>importFile.click());
-          importFile.addEventListener('change',e=>{ const f=e.target.files[0]; if(!f) return; const reader=new FileReader(); reader.onload=ev=>{ try{ const parsed=JSON.parse(ev.target.result); saveProjects(parsed); refreshTA(); alert('Imported and saved'); }catch(err){ alert('Invalid JSON file'); } }; reader.readAsText(f); });
-          closeBtn.addEventListener('click',()=>{ document.getElementById('admin-panel').style.display='none'; });
-        }else{ alert('Incorrect admin key'); }
+          const text=await response.text();
+          let result=null;
+          try{ result=text ? JSON.parse(text) : null; }catch(_){ result=null; }
+          if(!response.ok){
+            const detailMessage = result?.detail?.message || result?.detail?.error || (result?.detail ? JSON.stringify(result.detail) : '');
+            const message=[result?.error || text || `Publish failed with HTTP ${response.status}`, detailMessage].filter(Boolean).join(': ');
+            if(response.status===401){
+              adminKey='';
+              sessionStorage.removeItem('clarity_admin_key');
+              throw new Error('Unauthorized. The saved admin key was cleared. Click Publish again and enter the Worker ADMIN_KEY secret.');
+            }
+            throw new Error(message);
+          }
+          let seconds=25;
+          setAdminStatus(`Published. Waiting for Cloudflare Pages, then reloading in ${seconds}s...`);
+          clearInterval(publishTimer);
+          publishTimer=setInterval(()=>{
+            seconds-=1;
+            setAdminStatus(`Published. Waiting for Cloudflare Pages, then reloading in ${seconds}s...`);
+            if(seconds<=0){
+              clearInterval(publishTimer);
+              location.href=`${location.pathname}?v=${Date.now()}#projects`;
+            }
+          },1000);
+        }catch(error){
+          setAdminStatus(`Publish failed: ${error.message}`);
+          alert(`Publish failed: ${error.message}`);
+        }finally{
+          publishButton.disabled=false;
+        }
       }
 
+      const urlParams=new URLSearchParams(location.search);
+      document.getElementById('project-form')?.addEventListener('submit',event=>{
+        event.preventDefault();
+        try{ applyCurrentProject(); }catch(error){ alert(error.message); }
+      });
+      document.getElementById('add-project')?.addEventListener('click',()=>{
+        projects.push(emptyProject()); selectedProject=projects.length-1; renderAdminList(); fillProjectForm(); setAdminStatus('New project added locally. Fill the details and publish when ready.');
+      });
+      document.getElementById('delete-project')?.addEventListener('click',()=>{
+        if(projects.length<=1) return;
+        if(confirm(`Delete ${projects[selectedProject].title || 'this project'}?`)){
+          projects.splice(selectedProject,1); selectedProject=Math.max(0,selectedProject-1); renderProjects(); renderAdminList(); fillProjectForm(); setAdminStatus('Project deleted locally. Publish when ready.');
+        }
+      });
+      document.getElementById('duplicate-project')?.addEventListener('click',()=>{
+        const copy={...projects[selectedProject],title:`${projects[selectedProject].title} Copy`,bullets:[...(projects[selectedProject].bullets||[])]};
+        projects.splice(selectedProject+1,0,copy); selectedProject+=1; renderProjects(); renderAdminList(); fillProjectForm(); setAdminStatus('Project duplicated locally. Publish when ready.');
+      });
+      document.getElementById('export-json')?.addEventListener('click',()=>{
+        try{ applyCurrentProject(); }catch(error){ alert(error.message); return; }
+        const blob=new Blob([JSON.stringify(projects,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob);
+        const a=document.createElement('a'); a.href=url; a.download='projects.json'; a.click(); URL.revokeObjectURL(url);
+      });
+      document.getElementById('import-json')?.addEventListener('click',()=>document.getElementById('import-file')?.click());
+      document.getElementById('import-file')?.addEventListener('change',event=>{
+        const file=event.target.files[0]; if(!file) return;
+        const reader=new FileReader();
+        reader.onload=readerEvent=>{
+          try{ projects=validateProjects(JSON.parse(readerEvent.target.result)); selectedProject=0; renderProjects(); renderAdminList(); fillProjectForm(); setAdminStatus('Imported locally. Publish when ready.'); }
+          catch(error){ alert(`Invalid JSON file: ${error.message}`); }
+        };
+        reader.readAsText(file);
+      });
+      document.getElementById('publish-projects')?.addEventListener('click',publishProjects);
+      document.getElementById('close-admin')?.addEventListener('click',closeAdmin);
+      document.getElementById('admin-panel')?.addEventListener('click',event=>{ if(event.target.id==='admin-panel') closeAdmin(); });
+      if(urlParams.get('admin')==='true') window.addEventListener('load',openAdmin);
       // initial render
-      renderProjects();
+      loadProjects();
     })();
   </script>
 </body>
 </html>
+
+
+
+

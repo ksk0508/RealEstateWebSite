@@ -1,0 +1,11 @@
+name = "long-wave-e9fc"
+main = "cloudflare-worker.js"
+compatibility_date = "2026-06-24"
+workers_dev = true
+
+[vars]
+REPO_OWNER = "ksk0508"
+REPO_NAME = "RealEstateWebSite"
+BRANCH = "main"
+FILE_PATH = "projects.json"
+ALLOWED_ORIGIN = "*"

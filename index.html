@@ -3,20 +3,807 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clarity Estates — Luxury Homes in West Hyderabad</title>
-  <meta name="description" content="Clarity Estates Private Limited — Luxury realty advisory for flats and villas (₹3–30 Cr) in West Hyderabad, and plotted layout developments in emerging growth corridors around Hyderabad." />
+  <title>Clarity Estates - Luxury Homes in West Hyderabad</title>
+  <meta name="description" content="Clarity Estates Private Limited - Luxury realty advisory for flats and villas (Rs 3-30 Cr) in West Hyderabad, and plotted layout developments in emerging growth corridors around Hyderabad." />
   <meta name="theme-color" content="#1d1b18" />
   <meta property="og:title" content="Clarity Estates Private Limited" />
-  <meta property="og:description" content="Luxury Realty Advisory, West Hyderabad. Flats & Villas ₹3–30 Cr." />
+  <meta property="og:description" content="Luxury Realty Advisory, West Hyderabad. Flats & Villas Rs 3-30 Cr." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_IN" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=zodiak@400,500,700&display=swap" rel="stylesheet">
   <style>
-    /* (styles identical to Website srinivas.html) */
+    :root {
+      --xs: clamp(0.75rem,0.7rem + 0.2vw,0.875rem);
+      --sm: clamp(0.875rem,0.82rem + 0.28vw,1rem);
+      --base: clamp(1rem,0.95rem + 0.22vw,1.125rem);
+      --lg: clamp(1.125rem,1rem + 0.6vw,1.5rem);
+      --xl: clamp(1.4rem,1.1rem + 1.1vw,2.1rem);
+      --2xl: clamp(1.9rem,1.1rem + 2.2vw,3rem);
+      --hero: clamp(2.4rem,1rem + 4vw,4.8rem);
+
+      --s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.25rem;--s6:1.5rem;
+      --s8:2rem;--s10:2.5rem;--s12:3rem;--s16:4rem;
+
+      --bg:#f7f3ee;--surface:#fbf8f4;--surface2:#f3eee7;
+      --border:rgba(39,34,27,0.1);
+      --text:#27221b;--muted:#756b5d;
+      --gold:#b58a42;--gold-h:#9d7534;--gold-hl:rgba(181,138,66,0.1);
+      --charcoal:#1d1b18;--inverse:#faf7f2;
+      --sh-sm:0 1px 3px rgba(26,20,12,0.06);
+      --sh-md:0 8px 24px rgba(26,20,12,0.08);
+      --sh-lg:0 20px 52px rgba(26,20,12,0.12);
+      --fd:'Zodiak',Georgia,serif;--fb:'Satoshi',Inter,sans-serif;
+      --ease:180ms cubic-bezier(0.16,1,0.3,1);
+      --max:1140px;
+      --r:1rem;--r2:1.5rem;--rf:9999px;
+    }
+    [data-theme="dark"]{
+      --bg:#12100d;--surface:#181512;--surface2:#1e1a16;
+      --border:rgba(245,236,225,0.1);
+      --text:#e6ddd2;--muted:#b6a997;
+      --gold:#d2a75a;--gold-h:#dfb876;--gold-hl:rgba(210,167,90,0.12);
+      --charcoal:#f4eee4;--inverse:#17130f;
+      --sh-sm:0 1px 3px rgba(0,0,0,0.2);
+      --sh-md:0 8px 24px rgba(0,0,0,0.28);
+      --sh-lg:0 20px 52px rgba(0,0,0,0.38);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--fb);font-size:var(--base);line-height:1.65;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;color:inherit;cursor:pointer;border:none;background:none}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+    .wrap{width:min(calc(100% - 2rem),var(--max));margin:0 auto}
+    p{color:var(--muted);max-width:64ch}
+    h1,h2,h3,h4{font-family:var(--fd);line-height:1.07;letter-spacing:-.03em;font-weight:500}
+
+    /* pill */
+    .pill{display:inline-flex;align-items:center;gap:var(--s2);padding:.4rem .8rem;border-radius:var(--rf);border:1px solid var(--border);background:var(--surface);font-size:var(--xs);letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+    .pill::before{content:"";width:.35rem;height:.35rem;border-radius:50%;background:var(--gold);flex:0 0 auto}
+
+    /* buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:46px;padding:.8rem 1.25rem;border-radius:var(--rf);font-size:var(--sm);font-weight:600;transition:transform var(--ease),background var(--ease)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-gold{background:var(--gold);color:var(--inverse)}
+    .btn-gold:hover{background:var(--gold-h)}
+    .btn-outline{border:1px solid var(--border);background:var(--surface);color:var(--text)}
+
+    /* header */
+    .hdr{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 76%,transparent);border-bottom:1px solid var(--border)}
+    .hdr-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:70px}
+    .brand{display:flex;align-items:center;gap:var(--s3)}
+    .brand-mark{width:40px;height:40px;color:var(--gold);flex:0 0 auto}
+    .brand-name strong{display:block;font-size:var(--sm);color:var(--text);letter-spacing:.08em;text-transform:uppercase}
+    .brand-name span{display:block;color:var(--muted);font-size:var(--xs);letter-spacing:.06em}
+    .nav{display:none;align-items:center;gap:var(--s5);font-size:var(--sm);color:var(--muted)}
+    .nav a:hover{color:var(--text)}
+    .hdr-r{display:flex;align-items:center;gap:var(--s2)}
+    .icon-btn{width:40px;height:40px;border:1px solid var(--border);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--surface)}
+    .mob-nav{display:none;border-top:1px solid var(--border)}
+    .mob-nav.open{display:grid;gap:0;padding:var(--s3) 0 var(--s4)}
+    .mob-nav a{padding:var(--s3) 0;color:var(--muted);font-size:var(--sm);display:block}
+    .ham{display:inline-flex}
+
+    /* sections */
+    section{padding:clamp(2.5rem,5vw,4.5rem) 0}
+    .band{border-block:1px solid var(--border);background:color-mix(in srgb,var(--surface) 88%,transparent)}
+    .sh{margin-bottom:var(--s8)}
+    .sh .pill{margin-bottom:var(--s4)}
+    .sh h2{font-size:var(--2xl);max-width:18ch;margin-bottom:var(--s3)}
+    .sh p{max-width:58ch}
+
+    /* cards */
+    .card{padding:var(--s5) var(--s6);border-radius:var(--r2);background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-sm)}
+    .dots{list-style:none;display:grid;gap:var(--s3);margin:var(--s4) 0 var(--s5);color:var(--muted)}
+    .dots li{display:flex;align-items:start;gap:var(--s3);font-size:var(--sm)}
+    .dots li::before{content:"";width:.4rem;height:.4rem;border-radius:50%;background:var(--gold);margin-top:.55rem;flex:0 0 auto}
+
+    /* hero */
+    .hero{padding:clamp(3rem,7vw,6rem) 0 clamp(2.5rem,5vw,4rem);background:radial-gradient(circle at top left,color-mix(in srgb,var(--gold) 12%,transparent) 0%,transparent 30%)}
+    .hero-grid{display:grid;gap:var(--s10);align-items:center}
+    .hero-text .pill{margin-bottom:var(--s4)}
+    h1.h{font-size:var(--hero);max-width:14ch;margin-bottom:var(--s4)}
+    .hero-text p{font-size:var(--lg);max-width:52ch}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+    .hero-img{position:relative;min-height:460px;border-radius:calc(var(--r2) + .25rem);overflow:hidden;background:linear-gradient(180deg,rgba(14,12,10,.16),rgba(10,10,10,.52)),url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80') center/cover;box-shadow:var(--sh-lg)}
+    .hero-badges{position:absolute;left:var(--s4);right:var(--s4);bottom:var(--s4);display:grid;gap:var(--s3)}
+    .badge{padding:var(--s3) var(--s4);border-radius:var(--r);backdrop-filter:blur(14px);background:rgba(18,14,10,.54);border:1px solid rgba(255,255,255,.1);color:#f5efe6}
+    .badge strong{display:block;font-size:var(--lg);font-family:var(--fd);margin-bottom:.2rem}
+    .badge span{font-size:var(--xs);color:rgba(245,239,230,.72)}
+
+    /* values */
+    .values-grid{display:grid;gap:var(--s5);grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .val strong{display:block;font-family:var(--fd);font-size:var(--lg);color:var(--gold);margin-bottom:var(--s2)}
+    .val p{font-size:var(--sm);max-width:100%}
+
+    /* projects */
+    .proj-grid{display:grid;gap:var(--s5)}
+    .proj-card{border-radius:var(--r2);background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-sm);overflow:hidden}
+    .proj-photo{aspect-ratio:16/9;overflow:hidden;background:var(--surface2)}
+    .proj-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .proj-card:hover .proj-photo img{transform:scale(1.03)}
+    .proj-body{padding:var(--s5) var(--s6) var(--s6)}
+    .proj-body h3{font-size:var(--xl);margin-bottom:var(--s2)}
+    .tags{display:flex;flex-wrap:wrap;gap:var(--s2);margin:var(--s3) 0 var(--s4)}
+    .tag{display:inline-flex;align-items:center;min-height:28px;padding:.3rem .7rem;border-radius:var(--rf);background:var(--gold-hl);color:var(--text);font-size:var(--xs);border:1px solid color-mix(in srgb,var(--gold) 14%,transparent)}
+
+    /* plotted */
+    .plotted-panel{padding:var(--s8) var(--s8);border-radius:var(--r2);background:var(--charcoal);color:#f6efe5;box-shadow:var(--sh-lg)}
+    .plotted-panel p{color:rgba(246,239,229,.76);max-width:100%}
+    .plotted-panel .dots{color:rgba(246,239,229,.82)}
+    .plotted-panel h3{font-size:var(--xl);margin-bottom:var(--s3);color:#f6efe5}
+
+    /* serve */
+    .serve-grid{display:grid;gap:var(--s4)}
+    .serve-card{padding:var(--s5) var(--s5);border-radius:var(--r2);background:var(--surface);border:1px solid var(--border)}
+    .serve-card h3{font-size:var(--lg);margin-bottom:var(--s2);color:var(--text)}
+    .serve-card p{font-size:var(--sm);max-width:100%}
+
+    /* founders */
+    .founder-grid{display:grid;gap:var(--s5)}
+    .founder-card{display:grid;gap:var(--s5);padding:var(--s5) var(--s6);border-radius:var(--r2);background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-sm)}
+    .f-photo{position:relative;min-height:240px;border-radius:var(--r);background-size:cover;background-position:center top;overflow:hidden}
+    .f-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,14,.04),rgba(20,18,14,.44))}
+    .f-label{position:absolute;left:var(--s3);right:var(--s3);bottom:var(--s3);padding:var(--s3) var(--s4);background:rgba(250,245,238,.9);color:#1f1b16;border-radius:calc(var(--r) - .25rem);backdrop-filter:blur(10px)}
+    .f-label strong{display:block;font-size:var(--sm);margin-bottom:.15rem}
+    .f-label span{font-size:var(--xs);color:#5c5348}
+    .f-bio p{max-width:100%;color:var(--muted);font-size:var(--sm)}
+    .f-role{font-size:var(--xs);color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:var(--s3)}
+    .f-links{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s4)}
+
+    /* contact */
+    .cta-panel{padding:clamp(1.75rem,4vw,2.75rem);border-radius:calc(var(--r2) + .5rem);background:linear-gradient(135deg,#1d1b18,#3a2c1c);color:#f8f3eb;display:grid;gap:var(--s6);box-shadow:var(--sh-lg)}
+    .cta-panel h2{font-size:var(--2xl);max-width:16ch;color:#fffaf2}
+    .cta-panel p{color:rgba(255,250,242,.86);max-width:52ch}
+    .cta-btns{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s2)}
+    .cta-panel .btn-outline{background:rgba(255,255,255,.07);color:#f8f3eb;border-color:rgba(255,255,255,.14)}
+    .cin{font-size:var(--xs);color:rgba(255,250,242,.72);letter-spacing:.08em;margin-bottom:var(--s5)}
+
+    /* footer */
+    .footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--border)}
+    .footer-inner{display:flex;flex-direction:column;gap:var(--s3);color:var(--muted);font-size:var(--xs)}
+    .footer-links{display:flex;flex-wrap:wrap;gap:var(--s4)}
+    .footer-links a:hover{color:var(--text)}
+
+    /* animations */
+    .up{opacity:1}
+    @supports(animation-timeline:view()){
+      .up{clip-path:inset(100% 0 0 0);animation:clip linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
+      .fade{opacity:0;animation:afade linear both;animation-timeline:view();animation-range:entry 0% entry 85%}
+    }
+    @keyframes clip{to{clip-path:inset(0 0 0 0)}}
+    @keyframes afade{to{opacity:1}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* responsive */
+    @media(min-width:860px){
+      .nav{display:flex}.ham{display:none}
+      .hdr-r .btn-gold{display:inline-flex}
+      .hero-grid{grid-template-columns:1fr 1fr}
+      .proj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .serve-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .founder-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero-badges{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:859px){
+      .hdr-r .btn-gold{display:none}
+      .hero-img{min-height:380px}
+    }
+    /* WhatsApp FAB */
+    .whatsapp-fab{position:fixed;right:1rem;bottom:1.25rem;width:56px;height:56px;border-radius:9999px;background:#25D366;color:#fff;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.18);z-index:150}
+    .whatsapp-fab svg{width:22px;height:22px}
+    /* admin project manager */
+    body.admin-open{overflow:hidden}
+    .admin-overlay{position:fixed;inset:0;display:none;z-index:220;background:rgba(18,16,13,.58);backdrop-filter:blur(10px);padding:clamp(.75rem,2vw,1.5rem)}
+    .admin-overlay.open{display:flex}
+    .admin-modal{width:min(1180px,100%);max-height:min(860px,calc(100vh - 2rem));margin:auto;overflow:hidden;border-radius:var(--r2);background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-lg);display:grid;grid-template-rows:auto 1fr auto}
+    .admin-head,.admin-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s4) var(--s5);border-bottom:1px solid var(--border)}
+    .admin-foot{border-top:1px solid var(--border);border-bottom:0;flex-wrap:wrap}
+    .admin-title strong{display:block;font-size:var(--sm);color:var(--text)}
+    .admin-title span,.admin-status{display:block;font-size:var(--xs);color:var(--muted)}
+    .admin-body{display:grid;grid-template-columns:330px minmax(0,1fr);min-height:0}
+    .admin-list{border-right:1px solid var(--border);overflow:auto;padding:var(--s4);background:color-mix(in srgb,var(--surface2) 62%,transparent)}
+    .admin-list-head{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s3)}
+    .admin-items{display:grid;gap:var(--s2)}
+    .admin-item{width:100%;text-align:left;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);padding:var(--s3);display:grid;gap:.15rem}
+    .admin-item.active{border-color:color-mix(in srgb,var(--gold) 58%,transparent);box-shadow:0 0 0 3px var(--gold-hl)}
+    .admin-item strong{font-size:var(--sm);color:var(--text)}
+    .admin-item span{font-size:var(--xs);color:var(--muted)}
+    .admin-form{overflow:auto;padding:var(--s5);display:grid;gap:var(--s4)}
+    .admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4)}
+    .field{display:grid;gap:.35rem}
+    .field label{font-size:var(--xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .field input,.field textarea{width:100%;border:1px solid var(--border);border-radius:.75rem;background:var(--surface);color:var(--text);padding:.85rem .9rem;font:inherit;font-size:var(--sm)}
+    .field textarea{min-height:110px;resize:vertical}
+    .field.full{grid-column:1/-1}
+    .admin-actions{display:flex;flex-wrap:wrap;gap:var(--s3)}
+    .btn-danger{background:#b9403a;color:#fff}
+    .btn-danger:hover{background:#9f342f}
+    @media(max-width:760px){
+      .admin-body{grid-template-columns:1fr}
+      .admin-list{border-right:0;border-bottom:1px solid var(--border);max-height:220px}
+      .admin-grid{grid-template-columns:1fr}
+      .admin-head,.admin-foot{align-items:flex-start;flex-direction:column}
+    }
   </style>
 </head>
 <body>
-  <!-- (HTML identical to Website srinivas.html; index copy created to keep files in sync) -->
-  Please open `Website srinivas.html` for the full page. This index.html is a copy for deployment.
+  <header class="hdr">
+    <div class="wrap hdr-inner">
+      <a href="#home" class="brand" aria-label="Clarity Estates home">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="52" height="44" rx="12" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M22 40L32 22L42 40" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 44H44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M32 22V48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".6"/>
+        </svg>
+        <div class="brand-name">
+          <strong>Clarity Estates</strong>
+          <span>Luxury Advisory - West Hyderabad</span>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#plotted">Plotted Layouts</a>
+        <a href="#founders">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hdr-r">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a class="btn btn-gold" href="#contact">Talk to Us</a>
+        <button class="icon-btn ham" type="button" aria-expanded="false" aria-controls="mob-nav" aria-label="Open menu">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="wrap">
+      <nav id="mob-nav" class="mob-nav" aria-label="Mobile">
+        <a href="#projects">Projects</a>
+        <a href="#plotted">Plotted Layouts</a>
+        <a href="#founders">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-text fade">
+          <span class="pill">Luxury Realty Advisory - West Hyderabad</span>
+          <h1 class="h">Luxury Flats &amp; Villas in West Hyderabad</h1>
+          <p>We help premium buyers, NRIs, and HNIs find the right luxury flat or villa - Rs 3 Cr to Rs 30 Cr - across West Hyderabad's finest projects.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-gold" href="#projects">View Projects</a>
+            <a class="btn btn-outline" href="#contact">Talk to Us</a>
+          </div>
+        </div>
+        <div class="hero-img up" aria-hidden="true">
+          <div class="hero-badges">
+            <div class="badge">
+              <strong>Rs 3 Cr - Rs 30 Cr</strong>
+              <span>Luxury flats &amp; villas, West Hyderabad</span>
+            </div>
+            <div class="badge">
+              <strong>Flats - Villas - Gated Communities</strong>
+              <span>Advisory-first, no pressure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="band">
+      <div class="wrap">
+        <div class="values-grid">
+          <div class="val up">
+            <strong>Transparency</strong>
+            <p>No hidden agendas. Every recommendation comes with honest context.</p>
+          </div>
+          <div class="val up">
+            <strong>Trust</strong>
+            <p>Earned through consistency - in every conversation, every decision.</p>
+          </div>
+          <div class="val up">
+            <strong>Commitment</strong>
+            <p>We stay with you through the entire process, not just the first meeting.</p>
+          </div>
+          <div class="val up">
+            <strong>Clarity</strong>
+            <p>Filtered choices and clear thinking so you decide with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="sh fade">
+          <span class="pill">Featured Projects</span>
+          <h2>Curated luxury projects in West Hyderabad</h2>
+          <p>Handpicked for builder credibility, location strength, and long-term value - across the Rs 3-30 Cr segment.</p>
+        </div>
+        <div class="proj-grid" id="proj-grid">
+          <!-- Projects are rendered here from projects.json -->
+        </div>
+
+        <!-- Admin project manager. Open with ?admin=true. Saves through Cloudflare Worker. -->
+        <div id="admin-panel" class="admin-overlay" aria-hidden="true">
+          <div class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+            <div class="admin-head">
+              <div class="admin-title">
+                <strong id="admin-title">Project Manager</strong>
+                <span>Edit projects, then publish to projects.json through the Cloudflare Worker.</span>
+              </div>
+              <button id="close-admin" class="btn btn-outline" type="button">Close</button>
+            </div>
+            <div class="admin-body">
+              <aside class="admin-list" aria-label="Project list">
+                <div class="admin-list-head">
+                  <strong>Projects</strong>
+                  <button id="add-project" class="btn btn-gold" type="button" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">Add</button>
+                </div>
+                <div id="admin-project-list" class="admin-items"></div>
+              </aside>
+              <form id="project-form" class="admin-form">
+                <div class="admin-grid">
+                  <div class="field">
+                    <label for="project-title">Project name</label>
+                    <input id="project-title" name="title" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-location">Location</label>
+                    <input id="project-location" name="location" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-bhk">Configuration</label>
+                    <input id="project-bhk" name="bhk" placeholder="3 & 4 BHK" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-price">Price</label>
+                    <input id="project-price" name="price" placeholder="Rs 5 Cr - Rs 8 Cr" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-status">Status</label>
+                    <input id="project-status" name="status" placeholder="Ready to Move" required>
+                  </div>
+                  <div class="field">
+                    <label for="project-image">Image URL</label>
+                    <input id="project-image" name="image" type="url" required>
+                  </div>
+                  <div class="field full">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" name="description" required></textarea>
+                  </div>
+                  <div class="field full">
+                    <label for="project-bullets">Highlights, one per line</label>
+                    <textarea id="project-bullets" name="bullets"></textarea>
+                  </div>
+                </div>
+                <div class="admin-actions">
+                  <button id="apply-project" class="btn btn-gold" type="submit">Apply Changes</button>
+                  <button id="delete-project" class="btn btn-danger" type="button">Delete</button>
+                  <button id="duplicate-project" class="btn btn-outline" type="button">Duplicate</button>
+                  <button id="export-json" class="btn btn-outline" type="button">Export JSON</button>
+                  <input id="import-file" type="file" accept="application/json" style="display:none">
+                  <button id="import-json" class="btn btn-outline" type="button">Import JSON</button>
+                </div>
+              </form>
+            </div>
+            <div class="admin-foot">
+              <span id="admin-status" class="admin-status">Changes are local until you publish.</span>
+              <button id="publish-projects" class="btn btn-gold" type="button">Publish Projects</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLOTTED LAYOUTS -->
+    <section id="plotted">
+      <div class="wrap">
+        <div class="sh fade">
+          <span class="pill">Coming Soon</span>
+          <h2>Plotted developments - in the works</h2>
+        </div>
+        <div class="plotted-panel up">
+          <h3>Premium Plotted Layouts</h3>
+          <p>Clarity Estates is developing its own HMDA-approved gated plotted layouts in emerging, sustainable growth corridors around Hyderabad - built for long-term value.</p>
+          <ul class="dots">
+            <li>HMDA-approved gated plotted layouts</li>
+            <li>Emerging &amp; sustainable corridors around Hyderabad</li>
+            <li>Clear titles, premium positioning, infrastructure-ready</li>
+          </ul>
+          <a class="btn btn-gold" href="#contact">Register Your Interest</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE SERVE -->
+    <section class="band" id="about">
+      <div class="wrap">
+        <div class="sh fade">
+          <span class="pill">Who We Serve</span>
+          <h2>Built for serious buyers</h2>
+        </div>
+        <div class="serve-grid">
+          <div class="serve-card up">
+            <h3>Premium Home Buyers</h3>
+            <p>Upgrading to a luxury flat or villa in the Rs 3-30 Cr range. We give you filtered shortlists, honest comparisons, and site visit support - no pressure.</p>
+          </div>
+          <div class="serve-card up">
+            <h3>NRI Investors</h3>
+            <p>Evaluating Hyderabad's luxury market from abroad. We handle research and advisory end-to-end so you can decide with confidence from anywhere.</p>
+          </div>
+          <div class="serve-card up">
+            <h3>HNI Buyers</h3>
+            <p>Seeking curated, high-value residential opportunities in West Hyderabad's premium corridors - with full discretion and an investment-first perspective.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDERS -->
+    <section id="founders">
+      <div class="wrap">
+        <div class="sh fade">
+          <span class="pill">The Founders</span>
+          <h2>Two strengths. One clear mission.</h2>
+        </div>
+        <div class="founder-grid">
+          <div class="founder-card up">
+            <div class="f-photo" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80')">
+              <div class="f-label">
+                <strong>Srinivasa Reddy Manukonda</strong>
+                <span>Co-Founder</span>
+              </div>
+            </div>
+            <div class="f-bio">
+              <p class="f-role">Technology - Investment - Strategy</p>
+              <p>A technology professional turned real estate strategist - Srinivasa brings analytical rigour and research discipline to every advisory conversation. His focus is on verified opportunities, long-term wealth creation, and transparent guidance for buyers who want clarity, not sales pressure.</p>
+              <div class="f-links">
+                <a href="https://www.youtube.com/@HyderabadwealthArchitect" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+                  Hyderabad Wealth Architect
+                </a>
+                <a href="https://linktr.ee/srinivasamanukonda" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:var(--xs);min-height:36px;padding:.45rem .9rem">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.74 5.27l3.375-3.376a.75.75 0 0 0-1.06-1.06L12.68 4.208 9.31 .836a.75.75 0 0 0-1.06 1.06l3.374 3.375-3.947 3.948a.75.75 0 1 0 1.06 1.06L12.68 6.328l3.942 3.951a.75.75 0 1 0 1.061-1.06L13.74 5.27zM10.75 10.5h-7.5a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5zm3 0h7.5a.75.75 0 0 0 0-1.5h-7.5a.75.75 0 0 0 0 1.5z"/></svg>
+                  Links &amp; More
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="founder-card up">
+            <div class="f-photo" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80')">
+              <div class="f-label">
+                <strong>Chakravarthi Pulijala</strong>
+                <span>Co-Founder</span>
+              </div>
+            </div>
+            <div class="f-bio">
+              <p class="f-role">Land Development - Sales - Execution</p>
+              <p>Chakravarthi began his career as a contractor in open plotting ventures and grew into a successful partner in plotted layout development and luxury flat sales. His ground-level execution experience and drive to deliver results make him the operational backbone of Clarity Estates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="cta-panel up">
+          <div>
+            <span class="pill" style="border-color:rgba(255,255,255,.12);color:rgba(248,243,235,.7)">Get in Touch</span>
+            <h2 style="margin:var(--s4) 0 var(--s3)">Looking for a luxury home in West Hyderabad?</h2>
+            <p>Whether you're a buyer shortlisting properties, an NRI evaluating options remotely, or an HNI exploring premium investments - reach out for a direct, no-pressure conversation.</p>
+          </div>
+          <div>
+            <p class="cin">Clarity Estates Private Limited - CIN: U68100TS2026PTC216829</p>
+            <div class="cta-btns">
+              <a class="btn btn-gold" href="tel:+919948091645">Call Now</a>
+              <a class="btn btn-outline" href="https://wa.me/919948091645" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a class="btn btn-outline" href="mailto:clarityestateshyd@gmail.com">Email Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><strong style="color:var(--text)">Clarity Estates Private Limited</strong> - Luxury Realty Advisory, West Hyderabad - Plotted Developments coming soon.</div>
+      <div>CIN: U68100TS2026PTC216829</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#projects">Projects</a>
+        <a href="#plotted">Plotted Layouts</a>
+        <a href="#about">Who We Serve</a>
+        <a href="#founders">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      // THEME TOGGLE + MOBILE NAV (unchanged behavior)
+      const r=document.documentElement,t=document.querySelector('[data-theme-toggle]');
+      let m=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+      r.setAttribute('data-theme',m);
+      const ic=v=>v==='dark'?'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      t.innerHTML=ic(m);
+      t.addEventListener('click',()=>{m=m==='dark'?'light':'dark';r.setAttribute('data-theme',m);t.innerHTML=ic(m)});
+      const btn=document.querySelector('.ham'),nav=document.getElementById('mob-nav');
+      btn?.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(o))});
+      nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
+
+      // CONTACT QUICK LINKS (ensure all CTA links show the desired numbers)
+      // Floating WhatsApp button
+      const waFab=document.createElement('a');
+      waFab.className='whatsapp-fab';
+      waFab.href='https://wa.me/919948091645';
+      waFab.target='_blank';
+      waFab.rel='noopener noreferrer';
+      waFab.setAttribute('aria-label','WhatsApp');
+      waFab.innerHTML='<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.7 4.3a11 11 0 10-15.6 15.6L3 21l1.1-3.9A11 11 0 0021.7 4.3z" fill="currentColor"/><path d="M17.2 14.4c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2s-.8 1.2-1 1.4c-.2.2-.4.3-.8.1-.4-.2-1.5-.6-2.9-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.8.2-.3.2-.5.3-.8.1-.3 0-.6 0-.8-.1-.2-.7-1.6-1-2.2-.3-.6-.6-.5-.8-.5-.2 0-.4 0-.6 0s-.6.1-.9.4c-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.3 3.2 1.5 3.2 1 3.8 1 .6 0 2.1-.8 2.4-1.6.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.7-.5z" fill="#fff"/></svg>';
+      document.body.appendChild(waFab);
+
+      // PROJECTS: projects.json is the public source of truth.
+      const DEFAULT_PROJECTS = [
+        {
+          title:'Aparna One',
+          location:'Shaikpet',
+          bhk:'3 & 4 BHK',
+          price:'Rs 5 Cr - Rs 8 Cr',
+          status:'Ready to Move',
+          image:'https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg',
+          description:'Hyderabad\'s tallest residential towers - 6 towers, G+35 floors, 464 units on 9.7 acres.',
+          bullets:['Views of Golconda Fort, Golf Club & Qutb Shahi Tombs','40+ amenities including a full clubhouse block','By Aparna Constructions - 26+ years, 41 delivered projects']
+        },
+        {
+          title:'My Home APAS',
+          location:'Kokapet',
+          bhk:'2 & 3 BHK',
+          price:'Rs 3 Cr - Rs 4 Cr',
+          status:'Under Construction',
+          image:'https://imgcdn.houssed.com/assets/Files/Projects/8230/Project%20Image/89190d7c0c82ffa87e094d5914278450.webp',
+          description:'6 towers, G+44 floors, 1,338 units on 13.5 acres.',
+          bullets:['Panoramic lake & city skyline views from upper floors','5 min from Financial District, 10 min from Gachibowli','By My Home Group - 35+ years, 22 delivered projects']
+        }
+      ];
+      const PROJECTS_URL = 'projects.json';
+      const WORKER_ENDPOINT = window.__WORKER_ENDPOINT || 'https://long-wave-e9fc.k-santoshkumar0508.workers.dev/';
+      let projects = [];
+      let selectedProject = 0;
+      let adminKey = sessionStorage.getItem('clarity_admin_key') || '';
+      let publishTimer = null;
+
+      function escapeHTML(value){
+        return String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+      }
+      function normalizeProject(project){
+        return {
+          title:String(project?.title || '').trim(),
+          location:String(project?.location || '').trim(),
+          bhk:String(project?.bhk || '').trim(),
+          price:String(project?.price || '').trim(),
+          status:String(project?.status || '').trim(),
+          image:String(project?.image || '').trim(),
+          description:String(project?.description || '').trim(),
+          bullets:Array.isArray(project?.bullets) ? project.bullets.map(b=>String(b).trim()).filter(Boolean) : []
+        };
+      }
+      function validateProjects(value){
+        if(!Array.isArray(value)) throw new Error('projects.json must contain an array of projects.');
+        const cleaned=value.map(normalizeProject);
+        cleaned.forEach((p,i)=>{
+          ['title','location','bhk','price','status','image','description'].forEach(field=>{
+            if(!p[field]) throw new Error(`Project ${i+1} is missing ${field}.`);
+          });
+        });
+        return cleaned;
+      }
+      async function loadProjects(){
+        try{
+          const response=await fetch(`${PROJECTS_URL}?v=${Date.now()}`,{cache:'no-store'});
+          if(!response.ok) throw new Error(`HTTP ${response.status}`);
+          projects=validateProjects(await response.json());
+        }catch(error){
+          console.warn('Using bundled fallback projects because projects.json could not be loaded.',error);
+          projects=validateProjects(DEFAULT_PROJECTS);
+        }
+        selectedProject=0;
+        renderProjects();
+        renderAdminList();
+        fillProjectForm();
+      }
+      function renderProjects(){
+        const grid=document.getElementById('proj-grid'); if(!grid) return; grid.innerHTML='';
+        projects.forEach(p=>{
+          const art=document.createElement('article'); art.className='proj-card up';
+          art.innerHTML=`<div class="proj-photo"><img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.title)}" loading="lazy"></div>
+            <div class="proj-body">
+              <h3>${escapeHTML(p.title)}</h3>
+              <div class="tags">
+                <span class="tag">${escapeHTML(p.location)}</span>
+                <span class="tag">${escapeHTML(p.bhk)}</span>
+                <span class="tag">${escapeHTML(p.price)}</span>
+                <span class="tag">${escapeHTML(p.status)}</span>
+              </div>
+              <p>${escapeHTML(p.description)}</p>
+              <ul class="dots">${(p.bullets||[]).map(b=>`<li>${escapeHTML(b)}</li>`).join('')}</ul>
+              <a class="btn btn-gold" href="#contact">Request Details</a>
+            </div>`;
+          grid.appendChild(art);
+        });
+      }
+      function emptyProject(){
+        return {title:'New Project',location:'',bhk:'',price:'',status:'New Launch',image:'',description:'',bullets:[]};
+      }
+      function setAdminStatus(message){
+        const status=document.getElementById('admin-status');
+        if(status) status.textContent=message;
+      }
+      function renderAdminList(){
+        const list=document.getElementById('admin-project-list'); if(!list) return; list.innerHTML='';
+        projects.forEach((project,index)=>{
+          const button=document.createElement('button');
+          button.type='button';
+          button.className=`admin-item${index===selectedProject?' active':''}`;
+          button.innerHTML=`<strong>${escapeHTML(project.title || 'Untitled project')}</strong><span>${escapeHTML(project.location || 'No location')} - ${escapeHTML(project.status || 'No status')}</span>`;
+          button.addEventListener('click',()=>{ selectedProject=index; renderAdminList(); fillProjectForm(); });
+          list.appendChild(button);
+        });
+      }
+      function fillProjectForm(){
+        const form=document.getElementById('project-form'); if(!form || !projects.length) return;
+        const p=projects[selectedProject] || emptyProject();
+        form.elements.title.value=p.title || '';
+        form.elements.location.value=p.location || '';
+        form.elements.bhk.value=p.bhk || '';
+        form.elements.price.value=p.price || '';
+        form.elements.status.value=p.status || '';
+        form.elements.image.value=p.image || '';
+        form.elements.description.value=p.description || '';
+        form.elements.bullets.value=(p.bullets || []).join('\n');
+        document.getElementById('delete-project').disabled=projects.length<=1;
+      }
+      function projectFromForm(){
+        const form=document.getElementById('project-form');
+        return normalizeProject({
+          title:form.elements.title.value,
+          location:form.elements.location.value,
+          bhk:form.elements.bhk.value,
+          price:form.elements.price.value,
+          status:form.elements.status.value,
+          image:form.elements.image.value,
+          description:form.elements.description.value,
+          bullets:form.elements.bullets.value.split(/\r?\n/)
+        });
+      }
+      function applyCurrentProject(){
+        projects[selectedProject]=projectFromForm();
+        projects=validateProjects(projects);
+        renderProjects();
+        renderAdminList();
+        setAdminStatus('Changes applied locally. Publish when ready.');
+      }
+      function openAdmin(){
+        const panel=document.getElementById('admin-panel');
+        if(!adminKey){
+          const key=prompt('Enter admin publish key');
+          if(!key) return;
+          adminKey=key;
+          sessionStorage.setItem('clarity_admin_key',key);
+        }
+        panel.classList.add('open');
+        panel.setAttribute('aria-hidden','false');
+        document.body.classList.add('admin-open');
+        renderAdminList();
+        fillProjectForm();
+      }
+      function closeAdmin(){
+        const panel=document.getElementById('admin-panel');
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden','true');
+        document.body.classList.remove('admin-open');
+      }
+      async function publishProjects(){
+        try{ applyCurrentProject(); }catch(error){ alert(error.message); return; }
+        const publishButton=document.getElementById('publish-projects');
+        publishButton.disabled=true;
+        setAdminStatus('Publishing projects.json to GitHub...');
+        try{
+          const response=await fetch(WORKER_ENDPOINT,{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({adminKey,projects})
+          });
+          const text=await response.text();
+          let result=null;
+          try{ result=text ? JSON.parse(text) : null; }catch(_){ result=null; }
+          if(!response.ok){
+            const detailMessage = result?.detail?.message || result?.detail?.error || (result?.detail ? JSON.stringify(result.detail) : '');
+            const message=[result?.error || text || `Publish failed with HTTP ${response.status}`, detailMessage].filter(Boolean).join(': ');
+            if(response.status===401){
+              adminKey='';
+              sessionStorage.removeItem('clarity_admin_key');
+              throw new Error('Unauthorized. The saved admin key was cleared. Click Publish again and enter the Worker ADMIN_KEY secret.');
+            }
+            throw new Error(message);
+          }
+          let seconds=25;
+          setAdminStatus(`Published. Waiting for Cloudflare Pages, then reloading in ${seconds}s...`);
+          clearInterval(publishTimer);
+          publishTimer=setInterval(()=>{
+            seconds-=1;
+            setAdminStatus(`Published. Waiting for Cloudflare Pages, then reloading in ${seconds}s...`);
+            if(seconds<=0){
+              clearInterval(publishTimer);
+              location.href=`${location.pathname}?v=${Date.now()}#projects`;
+            }
+          },1000);
+        }catch(error){
+          setAdminStatus(`Publish failed: ${error.message}`);
+          alert(`Publish failed: ${error.message}`);
+        }finally{
+          publishButton.disabled=false;
+        }
+      }
+
+      const urlParams=new URLSearchParams(location.search);
+      document.getElementById('project-form')?.addEventListener('submit',event=>{
+        event.preventDefault();
+        try{ applyCurrentProject(); }catch(error){ alert(error.message); }
+      });
+      document.getElementById('add-project')?.addEventListener('click',()=>{
+        projects.push(emptyProject()); selectedProject=projects.length-1; renderAdminList(); fillProjectForm(); setAdminStatus('New project added locally. Fill the details and publish when ready.');
+      });
+      document.getElementById('delete-project')?.addEventListener('click',()=>{
+        if(projects.length<=1) return;
+        if(confirm(`Delete ${projects[selectedProject].title || 'this project'}?`)){
+          projects.splice(selectedProject,1); selectedProject=Math.max(0,selectedProject-1); renderProjects(); renderAdminList(); fillProjectForm(); setAdminStatus('Project deleted locally. Publish when ready.');
+        }
+      });
+      document.getElementById('duplicate-project')?.addEventListener('click',()=>{
+        const copy={...projects[selectedProject],title:`${projects[selectedProject].title} Copy`,bullets:[...(projects[selectedProject].bullets||[])]};
+        projects.splice(selectedProject+1,0,copy); selectedProject+=1; renderProjects(); renderAdminList(); fillProjectForm(); setAdminStatus('Project duplicated locally. Publish when ready.');
+      });
+      document.getElementById('export-json')?.addEventListener('click',()=>{
+        try{ applyCurrentProject(); }catch(error){ alert(error.message); return; }
+        const blob=new Blob([JSON.stringify(projects,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob);
+        const a=document.createElement('a'); a.href=url; a.download='projects.json'; a.click(); URL.revokeObjectURL(url);
+      });
+      document.getElementById('import-json')?.addEventListener('click',()=>document.getElementById('import-file')?.click());
+      document.getElementById('import-file')?.addEventListener('change',event=>{
+        const file=event.target.files[0]; if(!file) return;
+        const reader=new FileReader();
+        reader.onload=readerEvent=>{
+          try{ projects=validateProjects(JSON.parse(readerEvent.target.result)); selectedProject=0; renderProjects(); renderAdminList(); fillProjectForm(); setAdminStatus('Imported locally. Publish when ready.'); }
+          catch(error){ alert(`Invalid JSON file: ${error.message}`); }
+        };
+        reader.readAsText(file);
+      });
+      document.getElementById('publish-projects')?.addEventListener('click',publishProjects);
+      document.getElementById('close-admin')?.addEventListener('click',closeAdmin);
+      document.getElementById('admin-panel')?.addEventListener('click',event=>{ if(event.target.id==='admin-panel') closeAdmin(); });
+      if(urlParams.get('admin')==='true') window.addEventListener('load',openAdmin);
+      // initial render
+      loadProjects();
+    })();
+  </script>
 </body>
 </html>
+
+
+
+

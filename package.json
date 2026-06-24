@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "deploy:worker": "wrangler deploy",
+    "secrets:worker": "powershell -ExecutionPolicy Bypass -File scripts/set-worker-secrets.ps1"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}
