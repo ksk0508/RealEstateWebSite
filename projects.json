@@ -64,5 +64,15 @@
     "image": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
     "description": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
     "bullets": []
+  },
+  {
+    "title": "test",
+    "location": "test",
+    "bhk": "3",
+    "price": "4",
+    "status": "New Launch",
+    "image": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
+    "description": "Test",
+    "bullets": []
   }
 ]
