@@ -402,6 +402,9 @@
                   <button id="export-json" class="btn btn-outline" type="button">Export JSON</button>
                   <input id="import-file" type="file" accept="application/json" style="display:none">
                   <button id="import-json" class="btn btn-outline" type="button">Import JSON</button>
+                  <input id="bulk-csv-file" type="file" accept=".csv,text/csv" style="display:none">
+                  <button id="bulk-csv" class="btn btn-outline" type="button">Bulk CSV</button>
+                  <button id="csv-template" class="btn btn-outline" type="button">CSV Template</button>
                 </div>
               </form>
             </div>
@@ -636,7 +639,59 @@
         });
         return cleaned;
       }
-      async function loadProjects(){
+      function parseCSV(text){
+        const rows=[];
+        let row=[],value='',quoted=false;
+        for(let i=0;i<text.length;i+=1){
+          const ch=text[i], next=text[i+1];
+          if(ch==='"'){
+            if(quoted && next==='"'){ value+='"'; i+=1; }
+            else quoted=!quoted;
+          }else if(ch===',' && !quoted){
+            row.push(value); value='';
+          }else if((ch==='\n' || ch==='\r') && !quoted){
+            if(ch==='\r' && next==='\n') i+=1;
+            row.push(value); value='';
+            if(row.some(cell=>cell.trim())) rows.push(row);
+            row=[];
+          }else{
+            value+=ch;
+          }
+        }
+        row.push(value);
+        if(row.some(cell=>cell.trim())) rows.push(row);
+        return rows;
+      }
+      function projectsFromCSV(text){
+        const rows=parseCSV(text.trim());
+        if(rows.length<2) throw new Error('CSV must include a header row and at least one project row.');
+        const headers=rows[0].map(h=>h.trim().toLowerCase());
+        const required=['title','location','bhk','price','status','image','description'];
+        required.forEach(field=>{ if(!headers.includes(field)) throw new Error(`CSV is missing required column: ${field}`); });
+        const imported=rows.slice(1).map(row=>{
+          const record={};
+          headers.forEach((header,index)=>{ record[header]=(row[index] || '').trim(); });
+          return normalizeProject({
+            title:record.title,
+            location:record.location,
+            bhk:record.bhk,
+            price:record.price,
+            status:record.status,
+            image:record.image,
+            whatsapp:record.whatsapp,
+            description:record.description,
+            bullets:(record.bullets || '').split(/\s*\|\s*|\r?\n/)
+          });
+        });
+        return validateProjects(imported);
+      }
+      function downloadCSVTemplate(){
+        const header='title,location,bhk,price,status,image,whatsapp,description,bullets';
+        const sample='Sample Project,Kokapet,3 BHK,Rs 5 Cr,New Launch,https://example.com/project.jpg,919948091645,Short project description,"Highlight one | Highlight two | Highlight three"';
+        const blob=new Blob([header+'\n'+sample+'\n'],{type:'text/csv'});
+        const url=URL.createObjectURL(blob);
+        const a=document.createElement('a'); a.href=url; a.download='projects-template.csv'; a.click(); URL.revokeObjectURL(url);
+      }      async function loadProjects(){
         try{
           const response=await fetch(`${PROJECTS_URL}?v=${Date.now()}`,{cache:'no-store'});
           if(!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -834,8 +889,26 @@
           catch(error){ alert(`Invalid JSON file: ${error.message}`); }
         };
         reader.readAsText(file);
+        event.target.value='';
       });
-      document.getElementById('publish-projects')?.addEventListener('click',publishProjects);
+      document.getElementById('csv-template')?.addEventListener('click',downloadCSVTemplate);
+      document.getElementById('bulk-csv')?.addEventListener('click',()=>document.getElementById('bulk-csv-file')?.click());
+      document.getElementById('bulk-csv-file')?.addEventListener('change',event=>{
+        const file=event.target.files[0]; if(!file) return;
+        const reader=new FileReader();
+        reader.onload=readerEvent=>{
+          try{
+            const imported=projectsFromCSV(readerEvent.target.result);
+            const replace=confirm(`Import ${imported.length} projects from CSV? OK replaces all projects. Cancel appends them.`);
+            projects=replace ? imported : validateProjects([...projects,...imported]);
+            selectedProject=Math.max(0,projects.length-imported.length);
+            renderProjects(); renderAdminList(); fillProjectForm();
+            setAdminStatus(`CSV imported locally: ${imported.length} projects. Publish when ready.`);
+          }catch(error){ alert(`Invalid CSV file: ${error.message}`); }
+        };
+        reader.readAsText(file);
+        event.target.value='';
+      });      document.getElementById('publish-projects')?.addEventListener('click',publishProjects);
       document.getElementById('close-admin')?.addEventListener('click',closeAdmin);
       document.getElementById('admin-panel')?.addEventListener('click',event=>{ if(event.target.id==='admin-panel') closeAdmin(); });
       if(urlParams.get('admin')==='true') window.addEventListener('load',openAdmin);
