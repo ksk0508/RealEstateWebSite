@@ -6,6 +6,7 @@
     "price": "Rs 5 Cr - Rs 8 Cr",
     "status": "Ready to Move",
     "image": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
+    "whatsapp": "",
     "description": "Hyderabad's tallest residential towers - 6 towers, G+35 floors, 464 units on 9.7 acres. IGBC Platinum Pre-Certified. Walking distance from Banjara Hills and Jubilee Hills.",
     "bullets": [
       "Views of Golconda Fort, Golf Club & Qutb Shahi Tombs",
@@ -20,6 +21,7 @@
     "price": "Rs 3 Cr - Rs 4 Cr",
     "status": "Under Construction",
     "image": "https://imgcdn.houssed.com/assets/Files/Projects/8230/Project%20Image/89190d7c0c82ffa87e094d5914278450.webp",
+    "whatsapp": "",
     "description": "6 towers, G+44 floors, 1,338 units on 13.5 acres. Overlooks Kokapet Lake and Osman Sagar.",
     "bullets": [
       "Panoramic lake & city skyline views from upper floors",
@@ -34,6 +36,7 @@
     "price": "Rs 7 Cr - Rs 12 Cr",
     "status": "New Launch",
     "image": "https://imgcdn.houssed.com/assets/Files/Projects/1827/Project%20Image/b97b4ab1f06ab6f64b064c826041af85.webp",
+    "whatsapp": "",
     "description": "Ultra-luxury sky villas - 6,333-7,333 sq ft per unit, 232 exclusive residences.",
     "bullets": [
       "Maximum privacy - 2 units per floor",
@@ -48,6 +51,7 @@
     "price": "Rs 15 Cr - Rs 30 Cr",
     "status": "New Launch",
     "image": "https://imgcdn.houssed.com/assets/Files/Projects/127762/Project%20Image/1-1744099079.webp",
+    "whatsapp": "",
     "description": "Ultra-luxury independent villa community in Narsingi. Spacious 5 BHK villas with premium finishes.",
     "bullets": [
       "Low-density gated community - RERA registered",
@@ -62,6 +66,7 @@
     "price": "3",
     "status": "New Launch",
     "image": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
+    "whatsapp": "",
     "description": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
     "bullets": []
   },
@@ -72,7 +77,38 @@
     "price": "4",
     "status": "New Launch",
     "image": "https://static.squareyards.com/resources/images/hyderabad/project-image/aparna-one-project-project-large-image1-4078.jpg",
+    "whatsapp": "",
     "description": "Test",
     "bullets": []
+  },
+  {
+    "title": "Sample Project",
+    "location": "Kokapet",
+    "bhk": "3 BHK",
+    "price": "Rs 5 Cr",
+    "status": "New one",
+    "image": "https://example.com/project.jpg",
+    "whatsapp": "91994811",
+    "description": "Short project description",
+    "bullets": [
+      "Highlight one",
+      "Highlight two",
+      "Highlight three"
+    ]
+  },
+  {
+    "title": "Sample Project1",
+    "location": "Kokapet",
+    "bhk": "2 BHK",
+    "price": "Rs 10 Cr",
+    "status": "Test",
+    "image": "https://example.com/project.jpg",
+    "whatsapp": "91994811",
+    "description": "Short project description",
+    "bullets": [
+      "Highlight one",
+      "Highlight two",
+      "Highlight three"
+    ]
   }
 ]
