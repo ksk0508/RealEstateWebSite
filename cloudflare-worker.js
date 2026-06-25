@@ -20,6 +20,7 @@ function normalizeProject(project) {
     price: String(project?.price || '').trim(),
     status: String(project?.status || '').trim(),
     image: String(project?.image || '').trim(),
+    whatsapp: String(project?.whatsapp || '').replace(/\D/g, ''),
     description: String(project?.description || '').trim(),
     bullets: Array.isArray(project?.bullets) ? project.bullets.map((item) => String(item).trim()).filter(Boolean) : []
   };
